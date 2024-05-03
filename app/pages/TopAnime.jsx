@@ -2,16 +2,15 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 
-const hotManga = ({ topAnime }) => {
-  const limitedAnime = topAnime.slice(0, 12);
+const TopAnime = ({ topAnime }) => {
 
-  const hotMangaCard = limitedAnime.map((anime) => {
+  const hotMangaCard = topAnime.map((anime, index) => {
     return (
-      <div key={anime.id} className="manga bg-black bg-opacity-5  relative">
-        <Link href={`/anime/${anime.id}/`}>
+      <div key={index} className="manga bg-black bg-opacity-5  relative">
+        <Link href={`/anime/${anime.mal_id}/`}>
           <Image
-            className="w-1/4 sm:w-full md:w-full lg:w-full xl:w-full"
-            src={anime.image}
+            className="w-1/4 sm:w-full md:w-full lg:w-full xl:w-full transition duration-300 ease-in-out hover:scale-110"
+            src={anime.images.webp.image_url}
             objectFit="cover"
             width={50}
             height={50}
@@ -36,11 +35,11 @@ const hotManga = ({ topAnime }) => {
       </div>
       <div className="flex justify-center items-center p-5">
         <button className="before:ease relative h-12 w-40 overflow-hidden border border-blue-500 text-blue-500 shadow-2xl transition-all before:absolute before:top-1/2 before:h-0 before:w-64 before:origin-center before:-translate-x-20 before:rotate-45 before:bg-blue-500 before:duration-300 hover:text-white hover:shadow-blue-500 hover:before:h-64 hover:before:-translate-y-32">
-          Load More
+          Show All
         </button>
       </div>
     </div>
   );
 };
 
-export default hotManga;
+export default TopAnime;

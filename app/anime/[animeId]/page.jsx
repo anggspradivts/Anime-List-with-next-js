@@ -54,7 +54,7 @@ const AnimeDetail = async ({ params }) => {
             <div className="background-header bg-black">Background</div>
             <hr />
             <div className="background">
-              <p>{animeDetail.background ? animeDetail.background : "No Background Yet"}</p>
+              <p>{animeDetail.background ? animeDetail.background : "No Background Provided From API"}</p>
             </div>
           </div>
         </div>

@@ -2,7 +2,7 @@ import React from 'react'
 import Image from "next/image"
 
 const Character = async ({ animeId }) => {
-  const characterByAnime = await fetch(`https://api.jikan.moe/v4/anime/${animeId}/characters?limit=10`);
+  const characterByAnime = await fetch(`https://api.jikan.moe/v4/anime/${animeId}/characters`);
   const data = await characterByAnime.json();
   const character = data.data;
   const filterChar = character.slice(0, 10)
