@@ -4,42 +4,43 @@ import { MagnifyingGlass } from "@phosphor-icons/react/dist/ssr";
 
 const InputSearch = () => {
   const searchRef = useRef();
-  const [anime, setAnime] = useState(null);
+  const [keyword, setKeyword] = useState("");
   const [isSearchShow, setIsSearchShow] = useState(false);
+  const [anime, setAnime] = useState('')
 
+  // click outside ui
   const handleClickOutside = (event) => {
     if (!searchRef.current.contains(event.target)) {
       setIsSearchShow(false);
     }
   };
-
   useEffect(() => {
     document.addEventListener("click", handleClickOutside);
     return () => {
       document.removeEventListener("click", handleClickOutside);
     };
   }, []);
-
   const onSearchClick = () => {
     setIsSearchShow(true);
   };
+  // click outside ui
 
-  async function fetchData(searchTerm) {
+  //
+  async function fetchData(keyword) {
     const response = await fetch(
-      `${process.env.NEXT_PUBLIC_API_BASE_URL}/anime?q=${searchTerm}&limit=7`
+      `${process.env.NEXT_PUBLIC_API_BASE_URL}/anime?q=${keyword}&limit=7`
     );
-    const anime = await response.json();
-    return anime.data;
+    const fetchAnime = await response.json();
+    const searchAnime = fetchAnime.data;
+    setAnime(searchAnime)
   }
-
-  const handleSearch = async (e) => {
-    e.preventDefault();
-    // e.stopPropagation();
-    const searchTerm = searchRef.current.value;
-    const searchAnime = await fetchData(searchTerm);
-    setAnime(searchAnime);
-    // setIsSearchShow(true)
-  };
+  const handleChange = (event) => {
+    setKeyword(event.target.value)
+  }
+  useEffect(() => {
+    fetchData(keyword)
+  } ,[keyword])
+  //
 
   const searchCard =
     anime &&
@@ -54,15 +55,16 @@ const InputSearch = () => {
 
   return (
     <div className="flex-col ">
-      <div className="relative w-full h-full" onClick={onSearchClick} tabIndex={0} role="button">
+      <div className="relative w-full h-full" onClick={onSearchClick} tabIndex={0} role="button" ref={searchRef}>
         <input
           className="bg-black w-full h-full right-0 p-2"
           type="search"
           placeholder="search anime..."
+          value={keyword}
           name=""
-          ref={searchRef}
+          onChange={handleChange}
         />
-        <button className="search-icon absolute right-3 top-2" onClick={handleSearch}>
+        <button className="search-icon absolute right-3 top-2">
           <MagnifyingGlass size={22} />
         </button>
       {isSearchShow && (
