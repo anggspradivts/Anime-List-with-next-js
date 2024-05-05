@@ -3,22 +3,25 @@ import Image from "next/image";
 import Link from "next/link";
 
 const TopAnime = ({ topAnime }) => {
-
   const hotMangaCard = topAnime.map((anime, index) => {
     return (
-      <div key={index} className="manga bg-black bg-opacity-5  relative">
+      <div key={index} className="manga bg-black bg-opacity-5">
         <Link href={`/anime/${anime.mal_id}/`}>
-          <Image
-            className="w-1/4 sm:w-full md:w-full lg:w-full xl:w-full transition duration-300 ease-in-out hover:scale-110"
-            src={anime.images.webp.image_url}
-            objectFit="cover"
-            width={50}
-            height={50}
-            style={{ width: "full", height: "full" }}
-            quality={90}
-          />
-          <h1 className="anime-title absolute bottom-0 left-0 right-0 text-center bg-black bg-opacity-70">
-            {anime.title.length > 18 ? (anime.title.substring(0, 18) + "...") : (anime.title)}
+          <div className="image-container sm:h-5/6 ">
+            <Image
+              className="w-1/4 h-full sm:w-full "
+              src={anime.images.webp.image_url}
+              objectFit="cover"
+              width={200}
+              height={200}
+              style={{ width: "full", height: "full" }}
+              quality={90}
+            />
+          </div>
+          <h1 className="anime-title text-center bg-black bg-opacity-20 sm:h-1/6 ">
+            {anime.title.length > 18
+              ? anime.title.substring(0, 18) + "..."
+              : anime.title}
           </h1>
         </Link>
       </div>
@@ -27,8 +30,24 @@ const TopAnime = ({ topAnime }) => {
 
   return (
     <div className="lg:my-5">
-      <div className="hotmanga-header h-[50px] sm:h-[70px] flex items-center bg-black bg-opacity-20 px-5">
-        <h1 className="text-xl">Top Anime</h1>
+      <div className="hotmanga-header h-[50px] sm:h-[70px] flex items-center justify-between bg-black bg-opacity-20 px-5">
+        <h1 className="text-xl">Filter By</h1>
+        <div className="dropdown dropdown-end">
+          <div tabIndex={0} role="button" className="btn btn-ghost rounded-btn">
+            Filter
+          </div>
+          <ul
+            tabIndex={0}
+            className="menu dropdown-content z-[1] p-2 shadow bg-base-100 rounded-box w-52 mt-2"
+          >
+            <li>
+              <a>Item 1</a>
+            </li>
+            <li>
+              <Link href="/about">About</Link>
+            </li>
+          </ul>
+        </div>
       </div>
       <div className="hotmanga-container grid grid-cols-1 sm:grid-cols-5 lg:grid-cols-6 text-center p-5 gap-2">
         {hotMangaCard}

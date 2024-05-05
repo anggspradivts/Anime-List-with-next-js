@@ -10,8 +10,8 @@ const Sidebar = ({ animeDetail }) => {
           className="w-full sm:w-full md:w-full lg:w-full xl:w-full"
           src={animeDetail.images.webp.image_url}
           objectFit="cover"
-          width={50}
-          height={50}
+          width={300}
+          height={300}
           style={{ width: "full", height: "full" }}
           quality={90}
           alt={`${animeDetail.title} Image`}

@@ -6,7 +6,7 @@ import InputSearch from "./InputSearch"
 const Navbar = () => {
   return (
     <div>
-      <div className='bg-base-300 h-[100px] px-10 relative'>
+      <div className='bg-base-300 h-[100px] sm:px-10 relative text-[0.8rem] sm:text-[1rem]'>
         <div className='h-[50px] flex justify-between items-center'>
           <div className="navlogo">
             <Link className='text-xl' href="/">My Anime List</Link>
