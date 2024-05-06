@@ -1,7 +1,7 @@
 import Layout from "./components/Layout"
-import TopAnime from "./pages/TopAnime"
-import TopAiring from "./pages/TopAiring"
-import RankingList from "./pages/RankingList";
+import TopAnime from "./pages/filterpage"
+import TopAiring from "./pages/topairingpage"
+import RankingList from "./pages/rankpage";
 
 export default async function Home() {
 

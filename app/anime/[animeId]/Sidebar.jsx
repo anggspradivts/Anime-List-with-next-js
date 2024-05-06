@@ -44,10 +44,9 @@ const Sidebar = ({ animeDetail }) => {
           <p>
             Producers:{" "}
             {animeDetail.producers.map((producer, index) => (
-              <Link href={producer.url}>
+              <Link key={producer.mal_id} href={producer.url}>
                 <span
                   className="hover:text-blue-400 font-bold"
-                  key={producer.mal_id}
                 >
                   {producer.name}
                   {index < animeDetail.producers.length - 1 ? ", " : ""}
@@ -58,8 +57,8 @@ const Sidebar = ({ animeDetail }) => {
           <p>
             Licensors:{" "}
             {animeDetail.licensors.map((licensor, index) => (
-              <Link href={licensor.url}>
-                <span className="hover:text-blue-400 font-bold" key={index}>
+              <Link key={index} href={licensor.url}>
+                <span className="hover:text-blue-400 font-bold">
                   {licensor.name}
                   {index < animeDetail.licensors.length - 1 ? ", " : ""}
                 </span>
@@ -69,11 +68,10 @@ const Sidebar = ({ animeDetail }) => {
           <p>
             Genres:{" "}
             {animeDetail.genres.map((genre, index) => (
-              <Link href={genre.url}>
+              <Link key={index} href={genre.url}>
                 <span
                   className="hover:text-blue-400 font-bold"
                   id={genre.mal_id}
-                  key={index}
                 >
                   {genre.name}
                   {index < animeDetail.genres.length - 1 ? ", " : ""}
@@ -84,11 +82,10 @@ const Sidebar = ({ animeDetail }) => {
           <p>
             Demographics:{" "}
             {animeDetail.demographics.map((demographic, index) => (
-              <Link href={demographic.url}>
+              <Link key={index} href={demographic.url}>
                 <span
                   className="hover:text-blue-400 font-bold"
                   id={demographic.mal_id}
-                  key={index}
                 >
                   {demographic.name}
                   {index < animeDetail.demographics.length - 1 ? ", " : ""}

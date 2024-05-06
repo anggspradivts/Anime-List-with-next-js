@@ -17,6 +17,7 @@ const latestUpdated = ({ airAnime }) => {
               height={200}
               style={{ width: "full", height: "full" }}
               quality={90}
+              alt={`${anime.title} img`}
             />
           </div>
           <h1 className="anime-title text-center bg-black bg-opacity-20 sm:h-1/6 ">

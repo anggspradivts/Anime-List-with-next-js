@@ -17,6 +17,7 @@ const Character = async ({ animeId }) => {
         height={50}
         style={{ width: "full", height: "full" }}
         quality={90}
+        alt='character'
       />
       <div>
         <h1 className='font-bold'>{char.character.name}</h1>

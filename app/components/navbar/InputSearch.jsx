@@ -41,13 +41,6 @@ const InputSearch = () => {
     if (event && event.target) {
       setKeyword(event.target.value);
     }
-    // if (keyword.length > 2) {
-    //   if (event && event.target) {
-    //     debouncedHandleChange(event.target.value);
-    //   }
-    // } else {
-    //   setAnime([]);
-    // }
   };
 
   useEffect(() => {
@@ -83,6 +76,7 @@ const InputSearch = () => {
                 height={200}
                 style={{ width: "full", height: "full" }}
                 quality={90}
+                alt={`${anime.title} img`}
               />
             </div>
             <div className="w-3/4">
@@ -99,8 +93,8 @@ const InputSearch = () => {
       <div
         className="relative w-full h-full"
         onClick={onSearchClick}
-        tabIndex={0}
-        role="button"
+        // tabIndex={0}
+        // role="button"
         ref={searchRef}
       >
         <input
@@ -108,7 +102,6 @@ const InputSearch = () => {
           type="search"
           placeholder="search anime..."
           value={keyword}
-          name=""
           onChange={handleChange}
         />
         <button className="search-icon absolute right-3 top-2">
@@ -116,7 +109,7 @@ const InputSearch = () => {
         </button>
         {isSearchShow && (
           <div className="absolute top-15 bg-black p-2 w-full overflow-y-scroll max-h-[400px]">
-            {keyword ? searchCard : <p>Eg. 'naruto'</p>}
+            {keyword ? searchCard : <p>Eg. &quot;naruto&quot;</p>}
           </div>
         )}
       </div>
