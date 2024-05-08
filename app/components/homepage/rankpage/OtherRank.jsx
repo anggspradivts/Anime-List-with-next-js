@@ -1,8 +1,14 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
+// import { type } from "os";
 
-const OtherRank = ({ topPeople, topChar }) => {
+const OtherRank = async ({ topPeople }) => {
+  //Character
+  const fetchChar = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/top/characters?limit=10`)
+  const charData = await fetchChar.json();
+  const topChar = charData.data;
+
   const peopleCard = topPeople?.map((people, index) => {
     return (
       <div key={index}>

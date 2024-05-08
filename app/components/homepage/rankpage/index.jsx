@@ -23,10 +23,7 @@ const RankList = async () => {
   const peopleData = await fetchPeople.json();
   const topPeople = peopleData.data;
 
-  //Character
-  const fetchChar = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/top/characters?limit=10`)
-  const charData = await fetchChar.json();
-  const topChar = charData.data;
+  
 
   return (
     <div className="lg:my-5 ">
@@ -35,7 +32,7 @@ const RankList = async () => {
       </div>
       <div className="ranking-container grid grid-cols-1 sm:grid-cols-2 p-5 gap-10 lg:gap-5 h-[500px]">
         <RankAnime topAiringAnime={topAiringAnime} topUpcomingAnime={topUpcomingAnime}/>
-        <OtherRank topPeople={topPeople} topChar={topChar} />
+        <OtherRank topPeople={topPeople} />
       </div>
       <div className="popular">
         
