@@ -6,7 +6,7 @@ const RankAnime = ({ topAiringAnime, topUpcomingAnime }) => {
   const topAiringCard = topAiringAnime.map((anime, index) => {
     return (
       <Link key={index} href={`/anime/${anime.mal_id}/`}>
-        <div className="flex h-[60px] mb-3 bg-black bg-opacity-10 hover:bg-opacity-20">
+        <div className="flex h-[50px] sm:h-[60px] mb-3 bg-black bg-opacity-10 hover:bg-opacity-20">
           <div className="rank w-[20%] h-full bg-black flex justify-center items-center">
             <h1 className="text-2xl font-bold">{index + 1}</h1>
           </div>
@@ -22,7 +22,7 @@ const RankAnime = ({ topAiringAnime, topUpcomingAnime }) => {
               alt={`${anime.title} img`}
             />
           </div>
-          <div className="text-[0.7rem] w-[60%] p-0 sm:pl-2">
+          <div className="text-[0.6rem] w-[60%] p-0 sm:pl-2">
             <h1 className="">{anime.title}</h1>
           </div>
         </div>
@@ -33,7 +33,7 @@ const RankAnime = ({ topAiringAnime, topUpcomingAnime }) => {
   const topUpcomingCard = topUpcomingAnime.map((anime, index) => {
     return (
       <Link key={index} href={`/anime/${anime.mal_id}/`}>
-        <div className="flex h-[60px] mb-3 bg-black bg-opacity-10 hover:bg-opacity-20">
+        <div className="flex h-[50px] sm:h-[60px] mb-3 bg-black bg-opacity-10 hover:bg-opacity-20">
           <div className="rank w-[20%] h-full bg-black flex justify-center items-center">
             <h1 className="text-2xl font-bold">{index + 1}</h1>
           </div>
@@ -49,7 +49,7 @@ const RankAnime = ({ topAiringAnime, topUpcomingAnime }) => {
               alt={`${anime.title} img`}
             />
           </div>
-          <div className="text-[0.7rem] w-[60%] p-0 pl-2">
+          <div className="text-[0.6rem] w-[60%] p-0 pl-2">
             <h1 className="">{anime.title}</h1>
           </div>
         </div>

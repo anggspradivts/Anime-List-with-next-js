@@ -6,10 +6,10 @@ import Image from "next/image";
 const OtherRank = async ({ topPeople, topChar }) => {
 
   const peopleCard =
-    topPeople &&
+    Array.isArray(topPeople) &&
     topPeople.map((people, index) => {
     return (
-      <div key={index}>
+      <div key={people.mal_id}>
         <Link href={people.url}>
           <div className="h-full w-[80px] bg-black bg-opacity-20 text-center">
             <div className="people-img-cont h-5/6">
@@ -35,9 +35,10 @@ const OtherRank = async ({ topPeople, topChar }) => {
 
   const charCard =
     topChar &&
+    Array.isArray(topChar) &&
     topChar.map((char, index) => {
       return (
-        <div key={index}>
+        <div key={char.mal_id}>
           <Link href={char.url}>
             <div className="h-full w-[80px] text-center">
               <div className="people-img-cont h-5/6">
@@ -64,6 +65,8 @@ const OtherRank = async ({ topPeople, topChar }) => {
         </div>
       );
     });
+
+    
 
   return (
     <div className="grid grid-cols-1 gap-5 font-mono text-[0.7rem] sm:text-[1rem] h-1/2 sm:h-full">

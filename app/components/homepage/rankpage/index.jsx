@@ -19,17 +19,17 @@ const RankList = async () => {
   const topUpcomingAnime = upcomingAnime.data;
 
   //People
-  const fetchPeople = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/top/people?limit=10`)
-  const peopleData = await fetchPeople.json();
+  const resPeople = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/top/people?limit=10`)
+  const peopleData = await resPeople.json();
   const topPeople = peopleData.data;
 
   //Character
-  const fetchChar = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/top/characters?limit=10`)
-  const charData = await fetchChar.json();
+  const resChar = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/top/characters?limit=10`)
+  const charData = await resChar.json();
   const topChar = charData.data;
 
   return (
-    <div className="lg:my-5 ">
+    <div className="lg:my-5 mb-40 sm:mb-20">
       <div className="hotmanga-header h-[50px] sm:h-[70px] flex items-center bg-black bg-opacity-20 px-5">
         <h1 className="text-xl">🏆 Ranking List</h1>
       </div>
