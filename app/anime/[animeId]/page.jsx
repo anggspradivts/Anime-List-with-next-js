@@ -43,17 +43,17 @@ const AnimeDetail = async ({ params }) => {
         </div>
         <hr />
         <div className="long-text lg:p-2">
-          <div className="synopsis-sec mb-5">
-            <div className="synopsis-header bg-black">Synopsis</div>
+          <div className="synopsis-sec mb-5 font-mono">
+            <div className="synopsis-header bg-black font-mono font-bold">Synopsis</div>
             <hr />
-            <div className="synopsis min-h-72">
+            <div className="synopsis min-h-72 pt-5">
               <p>{animeDetail.synopsis}</p>
             </div>
           </div>
           <div className="background-sec min-h-72">
-            <div className="background-header bg-black">Background</div>
+            <div className="background-header bg-black font-mono font-bold">Background</div>
             <hr />
-            <div className="background">
+            <div className="background pt-5 font-mono">
               <p>{animeDetail.background ? animeDetail.background : "No Background Provided From API"}</p>
             </div>
           </div>

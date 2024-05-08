@@ -8,7 +8,7 @@ const Character = async ({ animeId }) => {
   const filterChar = character.slice(0, 10)
 
   const charCard = filterChar.map((char, index) => (
-    <div className="character flex gap-4" key={index}>
+    <div className="character flex gap-4 " key={index}>
       <Image
         className="w-1/6 h-3/4"
         src={char.character.images.webp.image_url}
@@ -19,7 +19,7 @@ const Character = async ({ animeId }) => {
         quality={90}
         alt='character'
       />
-      <div>
+      <div className="">
         <h1 className='font-bold'>{char.character.name}</h1>
         <p>{char.role} Character</p>
       </div>

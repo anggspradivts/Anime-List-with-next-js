@@ -1,9 +1,8 @@
-import React from 'react'
-import Link from "next/link"
-import Image from "next/image"
+import React from "react";
+import Link from "next/link";
+import Image from "next/image";
 
 const RankAnime = ({ topAiringAnime, topUpcomingAnime }) => {
-
   const topAiringCard = topAiringAnime.map((anime, index) => {
     return (
       <Link key={index} href={`/anime/${anime.mal_id}/`}>
@@ -59,23 +58,21 @@ const RankAnime = ({ topAiringAnime, topUpcomingAnime }) => {
   });
 
   return (
-    <>
-      <div className="ranklist grid sm:grid-cols-2 gap-5 h-[50vh] overflow-y-scroll">
-          <div className="hidden sm:block">
-            <div className="header bg-black p-5 lg:mb-3">
-              <h1>Top Airing</h1>
-            </div>
-            <div className="gap-5">{topAiringCard}</div>
-          </div>
-          <div>
-            <div className="header bg-black p-5 lg:mb-3">
-              <h1>Top Upcoming</h1>
-            </div>
-            <div className="gap-5">{topUpcomingCard}</div>
-          </div>
+    <div className="ranklist grid grid-cols-2 gap-5 h-[250px] sm:h-full overflow-y-scroll">
+      <div className="">
+        <div className="header bg-black p-5 lg:mb-3">
+          <h1>Top Airing</h1>
         </div>
-    </>
-  )
-}
+        <div className="gap-5">{topAiringCard}</div>
+      </div>
+      <div>
+        <div className="header bg-black p-5 lg:mb-3">
+          <h1>Top Upcoming</h1>
+        </div>
+        <div className="gap-5">{topUpcomingCard}</div>
+      </div>
+    </div>
+  );
+};
 
-export default RankAnime
+export default RankAnime;
