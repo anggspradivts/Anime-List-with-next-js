@@ -65,8 +65,6 @@ const OtherRank = async ({ topPeople, topChar }) => {
       );
     });
 
-    
-
   return (
     <div className="grid grid-cols-1 gap-5 font-mono text-[0.7rem] sm:text-[1rem] h-1/2 sm:h-full">
       <div className="flex h-[150px]">
@@ -104,3 +102,30 @@ const OtherRank = async ({ topPeople, topChar }) => {
 };
 
 export default OtherRank;
+
+OtherRank.propTypes = {
+  topPeople: PropTypes.arrayOf(
+    PropTypes.shape({
+      mal_id: PropTypes.number.isRequired,
+      url: PropTypes.string.isRequired,
+      images: PropTypes.shape({
+        jpg: PropTypes.shape({
+          image_url: PropTypes.string.isRequired,
+        }).isRequired,
+      }).isRequired,
+      name: PropTypes.string.isRequired,
+    })
+  ).isRequired,
+  topChar: PropTypes.arrayOf(
+    PropTypes.shape({
+      mal_id: PropTypes.number.isRequired,
+      name: PropTypes.string.isRequired,
+      url: PropTypes.string.isRequired,
+      images: PropTypes.shape({
+        webp: PropTypes.shape({
+          image_url: PropTypes.string.isRequired,
+        }).isRequired,
+      }).isRequired,
+    })
+  ).isRequired,
+};
