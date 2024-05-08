@@ -43,7 +43,7 @@ const OtherRank = async ({ topPeople, topChar }) => {
               <div className="people-img-cont h-5/6">
                 <Image
                   className="w-full h-full"
-                  src={char.images.webp.image_url}
+                  src={char.images.jpg.image_url}
                   objectFit="cover"
                   width={100}
                   height={100}
