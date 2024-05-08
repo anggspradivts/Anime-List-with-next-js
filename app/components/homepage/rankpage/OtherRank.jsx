@@ -9,7 +9,9 @@ const OtherRank = async ({ topPeople }) => {
   const charData = await fetchChar.json();
   const topChar = charData.data;
 
-  const peopleCard = topPeople.map((people, index) => {
+  const peopleCard =
+    topPeople &&
+    topPeople.map((people, index) => {
     return (
       <div key={index}>
         <Link href={people.url}>
@@ -36,7 +38,8 @@ const OtherRank = async ({ topPeople }) => {
   });
 
   const charCard =
-    topChar?.map((char, index) => {
+    topChar &&
+    topChar.map((char, index) => {
       return (
         <div key={index}>
           <Link href={char.url}>
