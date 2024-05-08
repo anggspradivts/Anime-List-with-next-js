@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-// import { type } from "os";
+import PropTypes from "prop-types"
 
 const OtherRank = async ({ topPeople, topChar }) => {
 
