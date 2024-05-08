@@ -34,7 +34,6 @@ const OtherRank = async ({ topPeople, topChar }) => {
   });
 
   const charCard =
-    topChar &&
     Array.isArray(topChar) &&
     topChar.map((char, index) => {
       return (
