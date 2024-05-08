@@ -3,7 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 
 const OtherRank = ({ topPeople, topChar }) => {
-  const peopleCard = topPeople.map((people, index) => {
+  const peopleCard = topPeople?.map((people, index) => {
     return (
       <div key={index}>
         <Link href={people.url}>
@@ -30,9 +30,7 @@ const OtherRank = ({ topPeople, topChar }) => {
   });
 
   const charCard =
-    // topChar &&
-    // Array.isArray(topChar) &&
-    topChar.map((char, index) => {
+    topChar?.map((char, index) => {
       return (
         <div key={index}>
           <Link href={char.url}>
