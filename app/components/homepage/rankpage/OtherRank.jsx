@@ -36,7 +36,7 @@ const OtherRank = async ({ topPeople }) => {
   });
 
   const charCard =
-    topChar?.map((char, index) => {
+    topChar.map((char, index) => {
       return (
         <div key={index}>
           <Link href={char.url}>
