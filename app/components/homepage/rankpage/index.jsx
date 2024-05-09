@@ -33,7 +33,7 @@ const RankList = async () => {
   const topChar = charData.data;
 
   return (
-    <div className="lg:my-5 mb-40 sm:mb-20">
+    <div className="lg:my-5 mb-80 sm:mb-20">
       <div className="hotmanga-header h-[50px] sm:h-[70px] flex items-center bg-black bg-opacity-20 px-5">
         <h1 className="text-xl">🏆 Ranking List</h1>
       </div>
@@ -42,7 +42,10 @@ const RankList = async () => {
           topAiringAnime={topAiringAnime}
           topUpcomingAnime={topUpcomingAnime}
         />
-        <OtherRank topPeople={topPeople} topChar={topChar} />
+        <OtherRank
+          topPeople={topPeople}
+          topChar={topChar}
+        />
       </div>
       <div className="popular"></div>
     </div>

@@ -68,7 +68,7 @@ const OtherRank = async ({ topPeople, topChar }) => {
   return (
     <div className="grid grid-cols-1 gap-5 font-mono text-[0.7rem] sm:text-[1rem] h-1/2 sm:h-full">
       <div className="flex h-[150px]">
-        <div className="w-[15%] h-full bg-blue-600 flex-col flex justify-center items-center font-serif">
+        <div className="w-[15%] h-full bg-blue-600 flex-col flex justify-center items-center font-serif text-yellow-300">
           <h1>TOP</h1>
           <h1 className="text-2xl">10</h1>
           <h1>People</h1>
